@@ -1,7 +1,6 @@
-import React,{useState} from 'react'
-import { up, down, comeBack, upFive, upfifteen,upFour  } from './functions';
+import React,{useState,useEffect} from 'react'
+import { up, down, comeBack, upFive, upfifteen,upFour,addToStorage  } from './functions';
 import {Plus,Minus,Repeat,Count,PhoneWrapper,ScreenWrapper,ButtonWrapper,PlusFive,PlusFour} from "./ButtonPad.styled"
-
 
 
 const ButtonPad= () => {
@@ -11,6 +10,9 @@ const ButtonPad= () => {
     const decrement = () => setCount(down);
     const reset = () => setCount(comeBack);
     const incrementFour = ()=>setCount(upFour)
+    useEffect(()=>{
+      addToStorage(new Date(),count)
+    },[count])
     return (
       <PhoneWrapper>
         <ScreenWrapper>

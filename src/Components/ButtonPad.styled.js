@@ -1,9 +1,16 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 import plus from '../assets/plus.svg';
 import minus from '../assets/minus.svg';
 import repeat from '../assets/nonstop.svg';
 import five from '../assets/five.svg'
 import four from '../assets/number-four.svg'
+
+
+const spin = keyframes`
+from {transform:rotate(0deg)}
+to{transform:rotate(360deg)}
+`
+
 
 export const PhoneWrapper = styled.div`
 width:350px;
@@ -11,6 +18,7 @@ height:500px;
 border:1px solid black;
 margin:auto;
 border-radius:10px;
+animation:${spin} 3s ease-in-out;
 `
 export const ScreenWrapper = styled.div`
 width: 80%;
@@ -28,23 +36,26 @@ margin:auto;
 margin-top: 10%;
 `;
 export const PlusFive = styled.button`
-  background-image: url(${five});
-  background-repeat: no-repeat, repeat;
-  width: 80px;
-  height: 80px;
-  border: none;
-  background-color: white;
-  transition: transform 0.3s ease-in-out;
-`;
+        
+         background-image: url(${five});
+         background-repeat: no-repeat, repeat;
+         width: 80px;
+         height: 80px;
+         border: none;
+         background-color: white;
+        
+       `;
 export const PlusFour = styled.button`
- background-image: url(${four});
-  background-repeat: no-repeat, repeat;
-  width: 80px;
-  height: 80px;
-  border: none;
-  background-color: white;
-  transition: transform 0.3s ease-in-out;
-`
+         background-image: url(${four});
+
+         background-repeat: no-repeat, repeat;
+         width: 80px;
+         height: 80px;
+         border: none;
+         background-color: white;
+        
+         
+       `;
 
 export const Plus = styled.button`
 background-image: url(${plus});
@@ -53,7 +64,7 @@ width: 80px;
 height: 80px;
 border: none;
 background-color: white;
-transition: transform 0.3s ease-in-out;
+
 `;
 export const Minus = styled.button`
   background-image: url(${minus});
@@ -74,5 +85,6 @@ export const Repeat = styled.button`
   background-color: white;
 `;
 export const Count = styled.p`
-  font-size: 100px;
-`;
+         font-size: 100px;
+         
+       `;
